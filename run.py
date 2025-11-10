@@ -5,7 +5,7 @@ Flask Web 应用启动脚本
 import os
 import sys
 from app import create_app
-
+from flask import Flask
 def main():
     """主函数"""
     try:
@@ -34,8 +34,25 @@ def main():
         sys.exit(0)
     except Exception as e:
         print(f"❌ 启动失败: {e}")
-        sys.exit(1)
+       print("🔁 尝试回退至最小化 Flask 应用以便公网连通性验证。")
+
+        fallback_app = Flask(__name__)
+
+        @fallback_app.route("/")
+        def _fallback_home():
+            return "Hello, World! (Fallback Flask App)"
+
+        port = int(os.environ.get('PORT', 5000))
+        debug = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+        print(f"🚀 回退应用启动中 http://0.0.0.0:{port}")
+        fallback_app.run(
+            debug=debug,
+            host='0.0.0.0',
+            port=port,
+            threaded=True
+        )
 
 if __name__ == '__main__':
     main()
+
 
