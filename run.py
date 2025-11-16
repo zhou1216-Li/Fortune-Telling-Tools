@@ -4,8 +4,11 @@ Flask Web 应用启动脚本
 """
 import os
 import sys
-from app import create_app
+
 from flask import Flask
+
+from app import create_app
+
 def main():
     """主函数"""
     try:
@@ -19,9 +22,9 @@ def main():
         debug = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
         
         # 启动应用
-        print(f"🚀 启动 Flask 应用...")
-        print(f"📡 访问地址: http://0.0.0.0:{port}")
-        print(f"🔧 调试模式: {debug}")
+        print("启动 Flask 应用...")
+        print(f"访问地址: http://0.0.0.0:{port}")
+        print(f"调试模式: {debug}")
         
         app.run(
             debug=debug,
@@ -30,11 +33,11 @@ def main():
             threaded=True  # 启用多线程支持
         )
     except KeyboardInterrupt:
-        print("\n⚠️  应用已停止")
+        print("\n应用已停止")
         sys.exit(0)
     except Exception as e:
-        print(f"❌ 启动失败: {e}")
-       print("🔁 尝试回退至最小化 Flask 应用以便公网连通性验证。")
+        print(f"启动失败: {e}")
+        print("尝试回退至最小化 Flask 应用以便公网连通性验证。")
 
         fallback_app = Flask(__name__)
 
@@ -44,7 +47,7 @@ def main():
 
         port = int(os.environ.get('PORT', 5000))
         debug = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
-        print(f"🚀 回退应用启动中 http://0.0.0.0:{port}")
+        print(f"回退应用启动中 http://0.0.0.0:{port}")
         fallback_app.run(
             debug=debug,
             host='0.0.0.0',
@@ -54,5 +57,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
 
