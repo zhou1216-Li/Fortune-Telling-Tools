@@ -1,0 +1,499 @@
+{
+  "INTJ": {
+    "name": "INTJ",
+    "full_name": "建筑师",
+    "description": "INTJ型的人独立、理性、有远见，擅长制定长期计划。他们喜欢通过逻辑分析解决问题，追求完美和创新。",
+    "personality_traits": [
+      "独立自主，不依赖他人",
+      "理性分析，逻辑思维强",
+      "有远见，善于制定计划",
+      "追求完美，高标准要求",
+      "有时显得冷漠和疏离",
+      "不善于表达情感"
+    ],
+    "strengths": [
+      "战略思维能力强",
+      "独立自主",
+      "理性分析",
+      "创新思维"
+    ],
+    "weaknesses": [
+      "不善于表达情感",
+      "有时过于理想主义",
+      "不够灵活",
+      "容易忽视他人感受"
+    ],
+    "compatibility": {
+      "best": ["ENFP", "ENTP"],
+      "good": ["INFJ", "INFP"],
+      "average": ["ISTJ", "ISFJ", "ESTJ", "ESFJ"],
+      "poor": ["ESFP", "ISFP"]
+    }
+  },
+  "INTP": {
+    "name": "INTP",
+    "full_name": "逻辑学家",
+    "description": "INTP型的人好奇、理性、灵活，喜欢探索理论和概念。他们独立思考，追求真理，但有时会显得过于理论化和不够实际。",
+    "personality_traits": [
+      "好奇心强，喜欢探索",
+      "理性分析，逻辑思维",
+      "独立思考，不盲从",
+      "灵活变通，适应性强",
+      "有时过于理论化",
+      "不善于表达情感"
+    ],
+    "strengths": [
+      "逻辑思维强",
+      "创新思维",
+      "独立思考",
+      "灵活变通"
+    ],
+    "weaknesses": [
+      "不够实际",
+      "不善于表达",
+      "容易拖延",
+      "忽视细节"
+    ],
+    "compatibility": {
+      "best": ["ENTJ", "ESTJ"],
+      "good": ["INFJ", "INTJ"],
+      "average": ["ENFP", "INFP", "ISTP", "ISFP"],
+      "poor": ["ESFP", "ISFJ"]
+    }
+  },
+  "ENTJ": {
+    "name": "ENTJ",
+    "full_name": "指挥官",
+    "description": "ENTJ型的人自信、果断、有领导力，擅长组织和管理。他们追求效率，目标明确，但有时会显得过于强势和缺乏耐心。",
+    "personality_traits": [
+      "自信果断，有领导力",
+      "目标明确，追求效率",
+      "组织能力强，善于管理",
+      "理性分析，决策迅速",
+      "有时过于强势",
+      "缺乏耐心，容易急躁"
+    ],
+    "strengths": [
+      "领导力强",
+      "组织能力强",
+      "决策迅速",
+      "目标导向"
+    ],
+    "weaknesses": [
+      "过于强势",
+      "缺乏耐心",
+      "有时过于理性",
+      "容易忽视他人感受"
+    ],
+    "compatibility": {
+      "best": ["INTP", "INFP"],
+      "good": ["ENTP", "ENFP"],
+      "average": ["INTJ", "INFJ", "ISTJ", "ISFJ"],
+      "poor": ["ISFP", "ESFP"]
+    }
+  },
+  "ENTP": {
+    "name": "ENTP",
+    "full_name": "辩论家",
+    "description": "ENTP型的人聪明、灵活、好奇，喜欢挑战和辩论。他们思维敏捷，创新性强，但有时会显得不够专注和缺乏耐心。",
+    "personality_traits": [
+      "聪明灵活，思维敏捷",
+      "好奇心强，喜欢挑战",
+      "创新思维，有创意",
+      "善于沟通，口才出色",
+      "有时不够专注",
+      "缺乏耐心，容易厌倦"
+    ],
+    "strengths": [
+      "创新思维",
+      "沟通能力强",
+      "灵活变通",
+      "适应能力强"
+    ],
+    "weaknesses": [
+      "不够专注",
+      "缺乏耐心",
+      "容易分心",
+      "有时过于理论化"
+    ],
+    "compatibility": {
+      "best": ["INFJ", "INTJ"],
+      "good": ["ENFP", "INFP"],
+      "average": ["ENTJ", "ESTJ", "ISTP", "ISFP"],
+      "poor": ["ISFJ", "ESFJ"]
+    }
+  },
+  "INFJ": {
+    "name": "INFJ",
+    "full_name": "提倡者",
+    "description": "INFJ型的人理想主义、有同理心、有洞察力，追求意义和价值。他们关心他人，有远见，但有时会显得过于理想化和不够实际。",
+    "personality_traits": [
+      "理想主义，追求意义",
+      "有同理心，关心他人",
+      "洞察力强，直觉敏锐",
+      "有远见，善于规划",
+      "有时过于理想化",
+      "容易感到压力"
+    ],
+    "strengths": [
+      "洞察力强",
+      "有同理心",
+      "有远见",
+      "理想主义"
+    ],
+    "weaknesses": [
+      "过于理想化",
+      "容易感到压力",
+      "有时过于敏感",
+      "不善于表达"
+    ],
+    "compatibility": {
+      "best": ["ENFP", "ENTP"],
+      "good": ["INTJ", "INFP"],
+      "average": ["ENFJ", "ESFJ", "ISFJ", "ISTJ"],
+      "poor": ["ESTP", "ISTP"]
+    }
+  },
+  "INFP": {
+    "name": "INFP",
+    "full_name": "调停者",
+    "description": "INFP型的人理想主义、有创造力、有同理心，追求真实和意义。他们善良温柔，有艺术天赋，但有时会显得过于理想化和不够实际。",
+    "personality_traits": [
+      "理想主义，追求真实",
+      "有创造力，有艺术天赋",
+      "有同理心，善良温柔",
+      "独立思考，不盲从",
+      "有时过于理想化",
+      "容易逃避现实"
+    ],
+    "strengths": [
+      "有创造力",
+      "有同理心",
+      "理想主义",
+      "善良温柔"
+    ],
+    "weaknesses": [
+      "过于理想化",
+      "容易逃避",
+      "有时过于敏感",
+      "不够实际"
+    ],
+    "compatibility": {
+      "best": ["ENFJ", "ENTJ"],
+      "good": ["INFJ", "INTJ"],
+      "average": ["ENFP", "INTP", "ISFP", "ESFP"],
+      "poor": ["ESTJ", "ISTJ"]
+    }
+  },
+  "ENFJ": {
+    "name": "ENFJ",
+    "full_name": "主人公",
+    "description": "ENFJ型的人热情、有同理心、有领导力，关心他人成长。他们善于沟通，有感染力，但有时会显得过于理想化和不够实际。",
+    "personality_traits": [
+      "热情开朗，有感染力",
+      "有同理心，关心他人",
+      "有领导力，善于组织",
+      "善于沟通，表达清晰",
+      "有时过于理想化",
+      "容易忽视自己的需求"
+    ],
+    "strengths": [
+      "有领导力",
+      "有同理心",
+      "善于沟通",
+      "有感染力"
+    ],
+    "weaknesses": [
+      "过于理想化",
+      "容易忽视自己",
+      "有时过于敏感",
+      "不善于说\"不\""
+    ],
+    "compatibility": {
+      "best": ["INFP", "ISFP"],
+      "good": ["INFJ", "INTJ"],
+      "average": ["ENFP", "ENTP", "ESFJ", "ISFJ"],
+      "poor": ["ISTP", "ESTP"]
+    }
+  },
+  "ENFP": {
+    "name": "ENFP",
+    "full_name": "竞选者",
+    "description": "ENFP型的人热情、有创造力、自由，喜欢探索可能性。他们乐观开朗，有感染力，但有时会显得不够专注和缺乏耐心。",
+    "personality_traits": [
+      "热情开朗，充满活力",
+      "有创造力，有想象力",
+      "自由开放，喜欢探索",
+      "乐观积极，有感染力",
+      "有时不够专注",
+      "缺乏耐心，容易厌倦"
+    ],
+    "strengths": [
+      "有创造力",
+      "乐观开朗",
+      "有感染力",
+      "自由开放"
+    ],
+    "weaknesses": [
+      "不够专注",
+      "缺乏耐心",
+      "容易分心",
+      "有时过于理想化"
+    ],
+    "compatibility": {
+      "best": ["INFJ", "INTJ"],
+      "good": ["ENFJ", "ENTJ"],
+      "average": ["ENTP", "INFP", "ESFP", "ISFP"],
+      "poor": ["ISTJ", "ESTJ"]
+    }
+  },
+  "ISTJ": {
+    "name": "ISTJ",
+    "full_name": "物流师",
+    "description": "ISTJ型的人实际、可靠、有条理，注重细节和规则。他们工作认真，负责任，但有时会显得过于保守和缺乏灵活性。",
+    "personality_traits": [
+      "实际可靠，值得信赖",
+      "有条理，组织能力强",
+      "注重细节，一丝不苟",
+      "负责任，工作认真",
+      "有时过于保守",
+      "缺乏灵活性"
+    ],
+    "strengths": [
+      "可靠负责",
+      "组织能力强",
+      "注重细节",
+      "工作认真"
+    ],
+    "weaknesses": [
+      "过于保守",
+      "缺乏灵活性",
+      "有时过于死板",
+      "不善于变通"
+    ],
+    "compatibility": {
+      "best": ["ESFP", "ESTP"],
+      "good": ["ISFJ", "ESTJ"],
+      "average": ["ISTP", "ISFP", "ENTJ", "INTJ"],
+      "poor": ["ENFP", "INFP"]
+    }
+  },
+  "ISFJ": {
+    "name": "ISFJ",
+    "full_name": "守护者",
+    "description": "ISFJ型的人善良、体贴、负责，关心他人需求。他们注重细节，有耐心，但有时会显得过于保守和缺乏自信。",
+    "personality_traits": [
+      "善良体贴，关心他人",
+      "负责可靠，值得信赖",
+      "注重细节，有耐心",
+      "有组织能力，有条理",
+      "有时过于保守",
+      "缺乏自信，容易担忧"
+    ],
+    "strengths": [
+      "善良体贴",
+      "负责可靠",
+      "注重细节",
+      "有耐心"
+    ],
+    "weaknesses": [
+      "过于保守",
+      "缺乏自信",
+      "容易担忧",
+      "不善于说\"不\""
+    ],
+    "compatibility": {
+      "best": ["ESFP", "ESTP"],
+      "good": ["ISTJ", "ESTJ"],
+      "average": ["ISFJ", "ENFJ", "ISFP", "ESFJ"],
+      "poor": ["ENTP", "INTP"]
+    }
+  },
+  "ESTJ": {
+    "name": "ESTJ",
+    "full_name": "总经理",
+    "description": "ESTJ型的人实际、果断、有组织能力，追求效率和秩序。他们工作努力，负责任，但有时会显得过于强势和缺乏耐心。",
+    "personality_traits": [
+      "实际果断，决策迅速",
+      "有组织能力，追求效率",
+      "工作努力，负责任",
+      "注重规则，维护秩序",
+      "有时过于强势",
+      "缺乏耐心，容易急躁"
+    ],
+    "strengths": [
+      "组织能力强",
+      "决策迅速",
+      "工作努力",
+      "负责任"
+    ],
+    "weaknesses": [
+      "过于强势",
+      "缺乏耐心",
+      "有时过于死板",
+      "不善于变通"
+    ],
+    "compatibility": {
+      "best": ["ISFP", "ISTP"],
+      "good": ["ISTJ", "ISFJ"],
+      "average": ["ESTJ", "ESFJ", "ENTJ", "INTJ"],
+      "poor": ["INFP", "ENFP"]
+    }
+  },
+  "ESFJ": {
+    "name": "ESFJ",
+    "full_name": "执政官",
+    "description": "ESFJ型的人热情、友好、负责，关心他人感受。他们善于社交，有组织能力，但有时会显得过于在意他人看法和缺乏自信。",
+    "personality_traits": [
+      "热情友好，善于社交",
+      "负责可靠，关心他人",
+      "有组织能力，有条理",
+      "注重和谐，维护关系",
+      "有时过于在意他人看法",
+      "缺乏自信，容易担忧"
+    ],
+    "strengths": [
+      "善于社交",
+      "负责可靠",
+      "有组织能力",
+      "关心他人"
+    ],
+    "weaknesses": [
+      "过于在意他人",
+      "缺乏自信",
+      "容易担忧",
+      "不善于说\"不\""
+    ],
+    "compatibility": {
+      "best": ["ISFP", "ISTP"],
+      "good": ["ESFJ", "ISFJ"],
+      "average": ["ESTJ", "ENFJ", "ESFP", "ESTP"],
+      "poor": ["INTP", "ENTP"]
+    }
+  },
+  "ISTP": {
+    "name": "ISTP",
+    "full_name": "鉴赏家",
+    "description": "ISTP型的人实际、灵活、独立，喜欢动手解决问题。他们冷静理性，适应能力强，但有时会显得过于冷漠和缺乏情感表达。",
+    "personality_traits": [
+      "实际灵活，适应能力强",
+      "独立自主，不依赖他人",
+      "冷静理性，逻辑思维",
+      "喜欢动手，解决问题",
+      "有时过于冷漠",
+      "不善于表达情感"
+    ],
+    "strengths": [
+      "适应能力强",
+      "独立自主",
+      "冷静理性",
+      "动手能力强"
+    ],
+    "weaknesses": [
+      "过于冷漠",
+      "不善于表达",
+      "有时过于独立",
+      "容易忽视他人感受"
+    ],
+    "compatibility": {
+      "best": ["ESTJ", "ESFJ"],
+      "good": ["ISTJ", "ISFJ"],
+      "average": ["ISTP", "ISFP", "ENTP", "INTP"],
+      "poor": ["ENFJ", "INFJ"]
+    }
+  },
+  "ISFP": {
+    "name": "ISFP",
+    "full_name": "探险家",
+    "description": "ISFP型的人温和、有创造力、自由，追求美和和谐。他们善良温柔，有艺术天赋，但有时会显得过于敏感和缺乏自信。",
+    "personality_traits": [
+      "温和善良，有同理心",
+      "有创造力，有艺术天赋",
+      "自由开放，喜欢探索",
+      "追求美和和谐",
+      "有时过于敏感",
+      "缺乏自信，容易担忧"
+    ],
+    "strengths": [
+      "有创造力",
+      "有艺术天赋",
+      "善良温柔",
+      "追求美"
+    ],
+    "weaknesses": [
+      "过于敏感",
+      "缺乏自信",
+      "容易担忧",
+      "不善于表达"
+    ],
+    "compatibility": {
+      "best": ["ESTJ", "ESFJ"],
+      "good": ["ENFJ", "ISFJ"],
+      "average": ["ISFP", "ISTP", "ESFP", "ESTP"],
+      "poor": ["ENTJ", "INTJ"]
+    }
+  },
+  "ESTP": {
+    "name": "ESTP",
+    "full_name": "企业家",
+    "description": "ESTP型的人实际、灵活、冒险，喜欢行动和挑战。他们自信果断，适应能力强，但有时会显得过于冲动和缺乏耐心。",
+    "personality_traits": [
+      "实际灵活，适应能力强",
+      "自信果断，行动迅速",
+      "喜欢冒险，勇于挑战",
+      "善于社交，人缘好",
+      "有时过于冲动",
+      "缺乏耐心，容易厌倦"
+    ],
+    "strengths": [
+      "适应能力强",
+      "自信果断",
+      "行动迅速",
+      "善于社交"
+    ],
+    "weaknesses": [
+      "过于冲动",
+      "缺乏耐心",
+      "容易厌倦",
+      "有时不够深思熟虑"
+    ],
+    "compatibility": {
+      "best": ["ISFJ", "ISTJ"],
+      "good": ["ESFJ", "ESTJ"],
+      "average": ["ESTP", "ESFP", "ISTP", "ISFP"],
+      "poor": ["INFJ", "INFP"]
+    }
+  },
+  "ESFP": {
+    "name": "ESFP",
+    "full_name": "娱乐家",
+    "description": "ESFP型的人热情、自由、乐观，喜欢享受生活。他们善于社交，有感染力，但有时会显得不够专注和缺乏计划性。",
+    "personality_traits": [
+      "热情开朗，充满活力",
+      "自由开放，喜欢享受",
+      "乐观积极，有感染力",
+      "善于社交，人缘好",
+      "有时不够专注",
+      "缺乏计划性，容易冲动"
+    ],
+    "strengths": [
+      "热情开朗",
+      "有感染力",
+      "善于社交",
+      "乐观积极"
+    ],
+    "weaknesses": [
+      "不够专注",
+      "缺乏计划性",
+      "容易冲动",
+      "有时过于表面化"
+    ],
+    "compatibility": {
+      "best": ["ISFJ", "ISTJ"],
+      "good": ["ESFJ", "ESTJ"],
+      "average": ["ESFP", "ESTP", "ISFP", "ISTP"],
+      "poor": ["INTJ", "INTP"]
+    }
+  }
+}
+

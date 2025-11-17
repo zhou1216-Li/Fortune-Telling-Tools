@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+
+{% block content %}
+<!-- 心理聊天标签页 -->
+<div class="tab-content active">
+        <div class="card">
+            <h2>💬 心理聊天助手</h2>
+            <p class="subtitle">在这里分享你的感受，我会认真倾听</p>
+            
+            {% if error %}
+            <div class="error-message">{{ error }}</div>
+            {% endif %}
+            
+            <div class="chat-container">
+            <div class="chat-messages">
+                {% if messages %}
+                    {% for msg in messages %}
+                    <div class="message {{ msg.sender }}">
+                        <div>{{ msg.content|replace('\n', '<br>')|safe }}</div>
+                        <div class="message-time">[{{ msg.time }}]</div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="message assistant">
+                        <div>你好！我是你的心理聊天助手。有什么想聊的吗？我会认真倾听的。</div>
+                        <div class="message-time">[系统]</div>
+                    </div>
+                {% endif %}
+            </div>
+            
+            <form method="POST" action="{{ url_for('main.chat') }}" class="chat-input-group">
+                <input type="text" name="message" placeholder="输入消息..." required autofocus>
+                <button type="submit" class="btn-primary">发送</button>
+            </form>
+            <div style="margin-top: 10px;">
+                <a href="{{ url_for('main.clear_chat') }}" class="btn-secondary" style="display: inline-block;">清空聊天</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

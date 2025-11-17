@@ -1,0 +1,78 @@
+{% extends "index.html" %}
+
+{% block content %}
+<!-- 历史记录标签页 -->
+<div class="tab-content active">
+    <div class="card">
+        <h2>📜 历史记录</h2>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <a href="{{ url_for('main.history') }}" class="btn-secondary" style="text-decoration: none; display: inline-block;">刷新</a>
+            {% if history_list %}
+            <span style="color: #666; font-size: 14px;">共 {{ history_list|length }} 条记录</span>
+            {% endif %}
+        </div>
+        
+        {% if success_message %}
+        <div class="success-message">{{ success_message }}</div>
+        {% endif %}
+        
+        {% if error_message %}
+        <div class="error-message">{{ error_message }}</div>
+        {% endif %}
+        
+        {% if error %}
+        <div class="error-message">{{ error }}</div>
+        {% endif %}
+        
+        <div id="history-list" style="margin-top: 20px;">
+            {% if history_list %}
+                {% for record in history_list %}
+                <div class="history-item">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <a href="{{ url_for('main.view_history', history_id=record.id) }}" style="text-decoration: none; color: inherit; flex: 1;">
+                            <h3>{{ record.name }}</h3>
+                            <p>{{ record.zodiac }} | {{ record.mbti }} | {{ record.created_at }}</p>
+                        </a>
+                        <form method="POST" action="{{ url_for('main.delete_history', history_id=record.id) }}" 
+                              onsubmit="return confirm('确定要删除这条记录吗？此操作不可恢复！');" 
+                              style="margin-left: 15px;">
+                            <button type="submit" class="btn-delete" title="删除记录">🗑️</button>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p style="text-align: center; color: #666; padding: 40px;">暂无历史记录</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+// 自动隐藏成功/错误消息
+document.addEventListener('DOMContentLoaded', function() {
+    const successMessage = document.querySelector('.success-message');
+    const errorMessage = document.querySelector('.error-message');
+    
+    if (successMessage) {
+        setTimeout(function() {
+            successMessage.style.transition = 'opacity 0.5s';
+            successMessage.style.opacity = '0';
+            setTimeout(function() {
+                successMessage.remove();
+            }, 500);
+        }, 3000);
+    }
+    
+    if (errorMessage) {
+        setTimeout(function() {
+            errorMessage.style.transition = 'opacity 0.5s';
+            errorMessage.style.opacity = '0';
+            setTimeout(function() {
+                errorMessage.remove();
+            }, 500);
+        }, 5000);
+    }
+});
+</script>
+{% endblock %}
