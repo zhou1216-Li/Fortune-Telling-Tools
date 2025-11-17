@@ -1,0 +1,268 @@
+{% extends "index.html" %}
+
+{% block content %}
+<!-- 分析预测标签页 -->
+<div class="tab-content active">
+    <div class="card">
+        <h2>✨ 命理预测工具</h2>
+        <p class="subtitle">请输入您的个人信息开始分析</p>
+        
+        {% if error %}
+        <div class="error-message">{{ error }}</div>
+        {% endif %}
+        
+        <form method="POST" action="{{ url_for('main.analyze') }}">
+            <h3 style="color: #667eea; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e0e0e0;">📋 基本信息</h3>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">姓名：</label>
+                    <input type="text" id="name" name="name" value="{{ request.form.get('name', '') }}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthday">生日：</label>
+                    <input type="date" id="birthday" name="birthday" value="{{ request.form.get('birthday', '') }}" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="mbti">MBTI类型：</label>
+                    <select id="mbti" name="mbti" required>
+                        <option value="">请选择MBTI类型</option>
+                        <option value="INTJ" {% if request.form.get('mbti') == 'INTJ' %}selected{% endif %}>INTJ - 建筑师</option>
+                        <option value="INTP" {% if request.form.get('mbti') == 'INTP' %}selected{% endif %}>INTP - 逻辑学家</option>
+                        <option value="ENTJ" {% if request.form.get('mbti') == 'ENTJ' %}selected{% endif %}>ENTJ - 指挥官</option>
+                        <option value="ENTP" {% if request.form.get('mbti') == 'ENTP' %}selected{% endif %}>ENTP - 辩论家</option>
+                        <option value="INFJ" {% if request.form.get('mbti') == 'INFJ' %}selected{% endif %}>INFJ - 提倡者</option>
+                        <option value="INFP" {% if request.form.get('mbti') == 'INFP' %}selected{% endif %}>INFP - 调停者</option>
+                        <option value="ENFJ" {% if request.form.get('mbti') == 'ENFJ' %}selected{% endif %}>ENFJ - 主人公</option>
+                        <option value="ENFP" {% if request.form.get('mbti') == 'ENFP' %}selected{% endif %}>ENFP - 竞选者</option>
+                        <option value="ISTJ" {% if request.form.get('mbti') == 'ISTJ' %}selected{% endif %}>ISTJ - 物流师</option>
+                        <option value="ISFJ" {% if request.form.get('mbti') == 'ISFJ' %}selected{% endif %}>ISFJ - 守卫者</option>
+                        <option value="ESTJ" {% if request.form.get('mbti') == 'ESTJ' %}selected{% endif %}>ESTJ - 总经理</option>
+                        <option value="ESFJ" {% if request.form.get('mbti') == 'ESFJ' %}selected{% endif %}>ESFJ - 执政官</option>
+                        <option value="ISTP" {% if request.form.get('mbti') == 'ISTP' %}selected{% endif %}>ISTP - 鉴赏家</option>
+                        <option value="ISFP" {% if request.form.get('mbti') == 'ISFP' %}selected{% endif %}>ISFP - 探险家</option>
+                        <option value="ESTP" {% if request.form.get('mbti') == 'ESTP' %}selected{% endif %}>ESTP - 企业家</option>
+                        <option value="ESFP" {% if request.form.get('mbti') == 'ESFP' %}selected{% endif %}>ESFP - 表演者</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birth_hour">出生时辰（小时，0-23）：</label>
+                    <input type="number" id="birth_hour" name="birth_hour" min="0" max="23" value="{{ request.form.get('birth_hour', '') }}" placeholder="例如：14">
+                </div>
+            </div>
+            
+            <h3 style="color: #667eea; margin: 30px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #e0e0e0;">🏠 风水信息（可选）</h3>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="residence_direction">居住方位：</label>
+                    <select id="residence_direction" name="residence_direction">
+                        <option value="">请选择居住方位（可选）</option>
+                        <option value="东" {% if request.form.get('residence_direction') == '东' %}selected{% endif %}>东</option>
+                        <option value="南" {% if request.form.get('residence_direction') == '南' %}selected{% endif %}>南</option>
+                        <option value="西" {% if request.form.get('residence_direction') == '西' %}selected{% endif %}>西</option>
+                        <option value="北" {% if request.form.get('residence_direction') == '北' %}selected{% endif %}>北</option>
+                        <option value="东北" {% if request.form.get('residence_direction') == '东北' %}selected{% endif %}>东北</option>
+                        <option value="东南" {% if request.form.get('residence_direction') == '东南' %}selected{% endif %}>东南</option>
+                        <option value="西南" {% if request.form.get('residence_direction') == '西南' %}selected{% endif %}>西南</option>
+                        <option value="西北" {% if request.form.get('residence_direction') == '西北' %}selected{% endif %}>西北</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="house_orientation">房屋朝向：</label>
+                    <select id="house_orientation" name="house_orientation">
+                        <option value="">请选择房屋朝向（可选）</option>
+                        <option value="正东" {% if request.form.get('house_orientation') == '正东' %}selected{% endif %}>正东</option>
+                        <option value="正南" {% if request.form.get('house_orientation') == '正南' %}selected{% endif %}>正南</option>
+                        <option value="正西" {% if request.form.get('house_orientation') == '正西' %}selected{% endif %}>正西</option>
+                        <option value="正北" {% if request.form.get('house_orientation') == '正北' %}selected{% endif %}>正北</option>
+                        <option value="东北" {% if request.form.get('house_orientation') == '东北' %}selected{% endif %}>东北</option>
+                        <option value="东南" {% if request.form.get('house_orientation') == '东南' %}selected{% endif %}>东南</option>
+                        <option value="西南" {% if request.form.get('house_orientation') == '西南' %}selected{% endif %}>西南</option>
+                        <option value="西北" {% if request.form.get('house_orientation') == '西北' %}selected{% endif %}>西北</option>
+                    </select>
+                </div>
+            </div>
+            
+            <h3 style="color: #667eea; margin: 30px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #e0e0e0;">🔮 其他命理分析（可选）</h3>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label style="display: flex; align-items: center; cursor: pointer;">
+                        <input type="checkbox" name="enable_bazi" value="1" {% if request.form.get('enable_bazi') == '1' %}checked{% endif %} style="margin-right: 8px; width: auto;">
+                        启用八字分析
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label style="display: flex; align-items: center; cursor: pointer;">
+                        <input type="checkbox" name="enable_tarot" value="1" {% if request.form.get('enable_tarot') == '1' %}checked{% endif %} style="margin-right: 8px; width: auto;">
+                        启用塔罗牌占卜
+                    </label>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; text-align: center;">
+                <button type="submit" class="btn-primary" style="font-size: 18px; padding: 15px 40px;">🔮 开始全面分析</button>
+                <button type="reset" class="btn-secondary" style="font-size: 18px; padding: 15px 40px; margin-left: 10px;">重置</button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- 分析结果 -->
+    {% if result %}
+    {% if result.history_id %}
+    <!-- 历史记录操作栏（仅在查看历史记录时显示） -->
+    <div class="card" style="margin-bottom: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h2 style="margin: 0; color: white;">📜 历史记录详情 - {{ result.name }}</h2>
+                <p style="margin: 5px 0 0 0; color: rgba(255, 255, 255, 0.9); font-size: 14px;">查看和分析历史记录</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <a href="{{ url_for('main.history') }}" class="btn-secondary" style="text-decoration: none; display: inline-block; padding: 8px 20px; font-size: 14px; background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid rgba(255, 255, 255, 0.3);">← 返回历史</a>
+                <form method="POST" action="{{ url_for('main.delete_history', history_id=result.history_id) }}" 
+                      onsubmit="return confirm('确定要删除这条记录吗？此操作不可恢复！');" 
+                      style="display: inline-block;">
+                    <button type="submit" class="btn-delete" title="删除记录" style="padding: 8px 20px; font-size: 14px;">🗑️ 删除记录</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    
+    <div class="two-column">
+        <!-- 左侧：命理分析 -->
+        <div class="card">
+            <h2>🌟 命理分析</h2>
+            <div class="result-content">
+                <h3 style="color: #667eea; margin-bottom: 15px;">用户：{{ result.name }}</h3>
+                
+                <div class="result-section">
+                    <h4 style="color: #764ba2; margin-bottom: 10px;">✨ 星座分析</h4>
+                    <div>{{ result.zodiac_analysis|replace('\n', '<br>')|safe }}</div>
+                </div>
+                
+                <hr style="margin: 20px 0; border: 1px solid #e0e0e0;">
+                
+                <div class="result-section">
+                    <h4 style="color: #764ba2; margin-bottom: 10px;">🧠 MBTI分析</h4>
+                    <div>{{ result.mbti_analysis|replace('\n', '<br>')|safe }}</div>
+                </div>
+                
+                <hr style="margin: 20px 0; border: 1px solid #e0e0e0;">
+                
+                <div class="result-section">
+                    <h4 style="color: #764ba2; margin-bottom: 10px;">📈 运势预测</h4>
+                    <div>{{ result.fortune_prediction|replace('\n', '<br>')|safe }}</div>
+                    {% if result.fortune_chart_html %}
+                    <div style="margin-top: 20px;">
+                        {{ result.fortune_chart_html|safe }}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- 右侧：风水分析、心理健康、其他命理 -->
+        <div class="card" style="display: flex; flex-direction: column;">
+            {% if result.fengshui_analysis %}
+            <div>
+                <h2>🏠 风水分析</h2>
+                <div class="result-content" style="max-height: 350px;">
+                    <div class="result-section">
+                        {{ result.fengshui_analysis|replace('\n', '<br>')|safe }}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            
+            {% if result.mental_health_analysis %}
+            <div style="margin-top: 15px;">
+                <h2>💚 心理健康分析</h2>
+                <div class="result-content" style="max-height: 350px;">
+                    <div class="result-section">
+                        {{ result.mental_health_analysis|replace('\n', '<br>')|safe }}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            
+            {% if result.bazi_analysis %}
+            <div style="margin-top: 15px;">
+                <h2>🔮 八字分析</h2>
+                <div class="result-content" style="max-height: 350px;">
+                    <div class="result-section">
+                        {{ result.bazi_analysis|replace('\n', '<br>')|safe }}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            
+            {% if result.tarot_reading %}
+            <div style="margin-top: 15px;">
+                <h2>🃏 塔罗牌占卜</h2>
+                <div class="result-content" style="max-height: 350px;">
+                    <div class="result-section">
+                        {{ result.tarot_reading|replace('\n', '<br>')|safe }}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    
+    <!-- 个性化推荐和行动计划 -->
+    {% if result.recommendations or result.action_plan %}
+    <div class="two-column">
+        {% if result.recommendations %}
+        <div class="card">
+            <h2>🎯 个人化推荐</h2>
+            <div class="result-content" style="max-height: 500px;">
+                <div class="result-section">
+                    {{ result.recommendations|replace('\n', '<br>')|safe }}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        
+        {% if result.action_plan %}
+        <div class="card">
+            <h2>📋 行动计划</h2>
+            <div class="result-content" style="max-height: 500px;">
+                <div class="result-section">
+                    {{ result.action_plan|replace('\n', '<br>')|safe }}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+    
+    <!-- 反馈表单和操作按钮 -->
+    <div class="card">
+        <h2>💬 用户反馈与操作</h2>
+        <form method="POST" action="{{ url_for('main.feedback', history_id=result.history_id) }}">
+            <div class="form-group">
+                <label for="feedback">请输入您的反馈：</label>
+                <textarea id="feedback" name="feedback" rows="4" placeholder="请分享您的使用感受和建议..."></textarea>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" class="btn-primary">提交反馈</button>
+                <a href="{{ url_for('main.index') }}" class="btn-secondary" style="text-decoration: none; display: inline-block; padding: 12px 30px;">返回分析</a>
+                <a href="{{ url_for('main.history') }}" class="btn-secondary" style="text-decoration: none; display: inline-block; padding: 12px 30px;">查看历史</a>
+            </div>
+        </form>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
